@@ -1,0 +1,17 @@
+# AI assisted development evidence
+
+Codex assisted with specification, implementation, and verification. These excerpts and artifacts describe observed work; they do not imply a separate human code review or an unrecorded AI debugging prompt.
+
+| Stage and context | AI suggestion or change | Evidence used to check it |
+|---|---|---|
+| Requirements. User: “Can you create the technical specification and implementation plan ... using Java and Spring Boot before we start coding?” | Define immutable states, integer cents, tenant/role policies, fund-level locking, retry rules and requirement IDs before implementation. | Compared with the supplied Usecase.docx, especially the $300/$10,000 example and role/transition rules. Preserved initial files; the lifecycle test independently asserts the exact expected cents at each step. |
+| Coding. User: “start implementing ... based on this specification and plan, including the automated tests and MCP demo” | Split JDBC business operations from explicit MCP adapters; implement creation retry uniqueness and shared fund-before-request locks with TransactionTemplate. | Real database constraints, concurrent tests and rollback-after-write test check financial effects. MCP subprocess tests compare discovered schemas with the saved contracts and validate responses. |
+| Verification. Actual failing output: “NoClassDefFoundError: com/networknt/schema/dialect/Dialects”. The next run reported missing ObjectMapper startup wiring. | Replaced schema-validator 1.5.8 with 2.0.0 after inspecting the SDK's published POM; moved to the corresponding API. Added the explicit JSON mapper required in this headless application. | evidence/02-verification.log and 03-verification.log preserve failures; the SDK POM declares 2.0.0, captured in sdk-schema-dependency.txt. Startup diagnostic is preserved. Final clean verify executes the real packaged server and client, rather than relying only on successful compilation or mocked tools. |
+
+The first client-test compilation also failed because a generic ObjectMapper.valueToTree call made AssertJ overload selection ambiguous. Adding an explicit JsonNode type fixed the compilation; evidence/01-initial-compile-failure.log preserves it. The deprecated Jackson MCP import was replaced with the SDK's current jackson2 package.
+
+AI generated the implementation and test scaffolding and used the compiler, SQL constraints, real subprocess execution, exact expected balances and observed dependency metadata to challenge its suggestions. No fabricated AI mistake or claim of human approval is included. A candidate should review the code and be able to explain the lock order, retry rules, and tenant predicates before submitting.
+
+Packaging review also caught SDK stdio negotiation of 2024-11-05. The test had only required a nonblank version. The fix explicitly advertises 2025-06-18 through the SDK transport extension point on server and demo client, and both SDK/raw-wire tests now require that exact version. Compare evidence/06-legacy-protocol-transcript.json with evidence/mcp-demo-transcript.json; run 07 is the final passing verification.
+
+Windows follow-up: the user supplied a passing 54-test business/contract run followed by INVALID_STATE at the first payment across MCP sessions. An abrupt child-JVM exit reproduced an acknowledged approval reverting to Pending. Setting H2 WRITE_DELAY=0 fixed this regression, and the full suite was rerun. This is local reproduction of the failure mechanism; a native Windows rerun remains for the user.

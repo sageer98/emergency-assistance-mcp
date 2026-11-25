@@ -1,0 +1,415 @@
+[ {
+  "identity" : "cb-case-worker",
+  "protocolVersion" : "2024-11-05"
+}, {
+  "identity" : "cb-case-worker",
+  "discoveredTools" : [ "approve_request", "create_request", "get_funding_summary", "get_request", "list_funds", "list_participants", "list_requests", "record_payment", "reject_request" ]
+}, {
+  "result" : {
+    "data" : {
+      "participants" : [ {
+        "id" : "cb-p1",
+        "displayName" : "Alex River"
+      }, {
+        "id" : "cb-p2",
+        "displayName" : "Taylor Field"
+      } ]
+    },
+    "ok" : true
+  },
+  "tool" : "list_participants",
+  "arguments" : { },
+  "identity" : "cb-case-worker"
+}, {
+  "result" : {
+    "data" : {
+      "funds" : [ {
+        "id" : "cb-emergency",
+        "name" : "Emergency Fund",
+        "allocationCents" : 1000000,
+        "currency" : "USD"
+      }, {
+        "id" : "cb-transport",
+        "name" : "Transport Fund",
+        "allocationCents" : 200000,
+        "currency" : "USD"
+      } ]
+    },
+    "ok" : true
+  },
+  "tool" : "list_funds",
+  "arguments" : { },
+  "identity" : "cb-case-worker"
+}, {
+  "result" : {
+    "data" : {
+      "request" : {
+        "id" : "afefaa53-c14b-4869-a7c1-5aaa34c4e472",
+        "participantId" : "cb-p1",
+        "fundId" : "cb-emergency",
+        "purpose" : "Rent",
+        "amountCents" : 30000,
+        "currency" : "USD",
+        "status" : "Pending",
+        "creatorId" : "cb-case-worker",
+        "clientSubmissionId" : "demo-rent-1",
+        "createdAt" : "2026-11-25T09:59:47.563188Z",
+        "decisionBy" : null,
+        "decisionAt" : null,
+        "paidBy" : null,
+        "paidAt" : null
+      },
+      "changed" : true
+    },
+    "ok" : true
+  },
+  "tool" : "create_request",
+  "arguments" : {
+    "fundId" : "cb-emergency",
+    "amountCents" : 30000,
+    "clientSubmissionId" : "demo-rent-1",
+    "participantId" : "cb-p1",
+    "purpose" : "Rent"
+  },
+  "identity" : "cb-case-worker"
+}, {
+  "result" : {
+    "data" : {
+      "request" : {
+        "id" : "afefaa53-c14b-4869-a7c1-5aaa34c4e472",
+        "participantId" : "cb-p1",
+        "fundId" : "cb-emergency",
+        "purpose" : "Rent",
+        "amountCents" : 30000,
+        "currency" : "USD",
+        "status" : "Pending",
+        "creatorId" : "cb-case-worker",
+        "clientSubmissionId" : "demo-rent-1",
+        "createdAt" : "2026-11-25T09:59:47.563188Z",
+        "decisionBy" : null,
+        "decisionAt" : null,
+        "paidBy" : null,
+        "paidAt" : null
+      },
+      "changed" : false
+    },
+    "ok" : true
+  },
+  "tool" : "create_request",
+  "arguments" : {
+    "fundId" : "cb-emergency",
+    "amountCents" : 30000,
+    "clientSubmissionId" : "demo-rent-1",
+    "participantId" : "cb-p1",
+    "purpose" : "Rent"
+  },
+  "identity" : "cb-case-worker"
+}, {
+  "result" : {
+    "error" : {
+      "message" : "Role does not permit this operation.",
+      "code" : "FORBIDDEN",
+      "retryable" : false
+    },
+    "ok" : false
+  },
+  "tool" : "approve_request",
+  "arguments" : {
+    "requestId" : "afefaa53-c14b-4869-a7c1-5aaa34c4e472"
+  },
+  "identity" : "cb-case-worker"
+}, {
+  "result" : {
+    "error" : {
+      "message" : "Arguments do not match the tool input schema.",
+      "code" : "VALIDATION_ERROR",
+      "retryable" : false
+    },
+    "ok" : false
+  },
+  "tool" : "create_request",
+  "arguments" : {
+    "participantId" : "cb-p1",
+    "fundId" : "cb-emergency",
+    "amountCents" : 1.25,
+    "purpose" : "Rent",
+    "clientSubmissionId" : "demo-rent-1"
+  },
+  "identity" : "cb-case-worker"
+}, {
+  "result" : {
+    "error" : {
+      "message" : "Record not found.",
+      "code" : "NOT_FOUND",
+      "retryable" : false
+    },
+    "ok" : false
+  },
+  "tool" : "get_funding_summary",
+  "arguments" : {
+    "fundId" : "hs-emergency"
+  },
+  "identity" : "cb-case-worker"
+}, {
+  "identity" : "cb-program-manager",
+  "protocolVersion" : "2024-11-05"
+}, {
+  "identity" : "cb-program-manager",
+  "discoveredTools" : [ "approve_request", "create_request", "get_funding_summary", "get_request", "list_funds", "list_participants", "list_requests", "record_payment", "reject_request" ]
+}, {
+  "result" : {
+    "data" : {
+      "request" : {
+        "id" : "afefaa53-c14b-4869-a7c1-5aaa34c4e472",
+        "participantId" : "cb-p1",
+        "fundId" : "cb-emergency",
+        "purpose" : "Rent",
+        "amountCents" : 30000,
+        "currency" : "USD",
+        "status" : "Approved",
+        "creatorId" : "cb-case-worker",
+        "clientSubmissionId" : "demo-rent-1",
+        "createdAt" : "2026-11-25T09:59:47.563188Z",
+        "decisionBy" : "cb-program-manager",
+        "decisionAt" : "2026-11-25T09:59:48.732046Z",
+        "paidBy" : null,
+        "paidAt" : null
+      },
+      "changed" : true
+    },
+    "ok" : true
+  },
+  "tool" : "approve_request",
+  "arguments" : {
+    "requestId" : "afefaa53-c14b-4869-a7c1-5aaa34c4e472"
+  },
+  "identity" : "cb-program-manager"
+}, {
+  "result" : {
+    "data" : {
+      "request" : {
+        "id" : "afefaa53-c14b-4869-a7c1-5aaa34c4e472",
+        "participantId" : "cb-p1",
+        "fundId" : "cb-emergency",
+        "purpose" : "Rent",
+        "amountCents" : 30000,
+        "currency" : "USD",
+        "status" : "Approved",
+        "creatorId" : "cb-case-worker",
+        "clientSubmissionId" : "demo-rent-1",
+        "createdAt" : "2026-11-25T09:59:47.563188Z",
+        "decisionBy" : "cb-program-manager",
+        "decisionAt" : "2026-11-25T09:59:48.732046Z",
+        "paidBy" : null,
+        "paidAt" : null
+      },
+      "changed" : false
+    },
+    "ok" : true
+  },
+  "tool" : "approve_request",
+  "arguments" : {
+    "requestId" : "afefaa53-c14b-4869-a7c1-5aaa34c4e472"
+  },
+  "identity" : "cb-program-manager"
+}, {
+  "result" : {
+    "data" : {
+      "funds" : [ {
+        "fundId" : "cb-emergency",
+        "name" : "Emergency Fund",
+        "currency" : "USD",
+        "allocationCents" : 1000000,
+        "committedCents" : 30000,
+        "paidCents" : 0,
+        "availableCents" : 970000
+      } ]
+    },
+    "ok" : true
+  },
+  "tool" : "get_funding_summary",
+  "arguments" : {
+    "fundId" : "cb-emergency"
+  },
+  "identity" : "cb-program-manager"
+}, {
+  "identity" : "cb-finance",
+  "protocolVersion" : "2024-11-05"
+}, {
+  "identity" : "cb-finance",
+  "discoveredTools" : [ "approve_request", "create_request", "get_funding_summary", "get_request", "list_funds", "list_participants", "list_requests", "record_payment", "reject_request" ]
+}, {
+  "result" : {
+    "ok" : true,
+    "data" : {
+      "request" : {
+        "id" : "afefaa53-c14b-4869-a7c1-5aaa34c4e472",
+        "participantId" : "cb-p1",
+        "fundId" : "cb-emergency",
+        "purpose" : "Rent",
+        "amountCents" : 30000,
+        "currency" : "USD",
+        "status" : "Paid",
+        "creatorId" : "cb-case-worker",
+        "clientSubmissionId" : "demo-rent-1",
+        "createdAt" : "2026-11-25T09:59:47.563188Z",
+        "decisionBy" : "cb-program-manager",
+        "decisionAt" : "2026-11-25T09:59:48.732046Z",
+        "paidBy" : "cb-finance",
+        "paidAt" : "2026-11-25T09:59:49.922565Z"
+      },
+      "changed" : true
+    }
+  },
+  "tool" : "record_payment",
+  "arguments" : {
+    "requestId" : "afefaa53-c14b-4869-a7c1-5aaa34c4e472"
+  },
+  "identity" : "cb-finance"
+}, {
+  "result" : {
+    "ok" : true,
+    "data" : {
+      "request" : {
+        "id" : "afefaa53-c14b-4869-a7c1-5aaa34c4e472",
+        "participantId" : "cb-p1",
+        "fundId" : "cb-emergency",
+        "purpose" : "Rent",
+        "amountCents" : 30000,
+        "currency" : "USD",
+        "status" : "Paid",
+        "creatorId" : "cb-case-worker",
+        "clientSubmissionId" : "demo-rent-1",
+        "createdAt" : "2026-11-25T09:59:47.563188Z",
+        "decisionBy" : "cb-program-manager",
+        "decisionAt" : "2026-11-25T09:59:48.732046Z",
+        "paidBy" : "cb-finance",
+        "paidAt" : "2026-11-25T09:59:49.922565Z"
+      },
+      "changed" : false
+    }
+  },
+  "tool" : "record_payment",
+  "arguments" : {
+    "requestId" : "afefaa53-c14b-4869-a7c1-5aaa34c4e472"
+  },
+  "identity" : "cb-finance"
+}, {
+  "result" : {
+    "ok" : true,
+    "data" : {
+      "request" : {
+        "id" : "afefaa53-c14b-4869-a7c1-5aaa34c4e472",
+        "participantId" : "cb-p1",
+        "fundId" : "cb-emergency",
+        "purpose" : "Rent",
+        "amountCents" : 30000,
+        "currency" : "USD",
+        "status" : "Paid",
+        "creatorId" : "cb-case-worker",
+        "clientSubmissionId" : "demo-rent-1",
+        "createdAt" : "2026-11-25T09:59:47.563188Z",
+        "decisionBy" : "cb-program-manager",
+        "decisionAt" : "2026-11-25T09:59:48.732046Z",
+        "paidBy" : "cb-finance",
+        "paidAt" : "2026-11-25T09:59:49.922565Z"
+      }
+    }
+  },
+  "tool" : "get_request",
+  "arguments" : {
+    "requestId" : "afefaa53-c14b-4869-a7c1-5aaa34c4e472"
+  },
+  "identity" : "cb-finance"
+}, {
+  "result" : {
+    "ok" : true,
+    "data" : {
+      "requests" : [ {
+        "id" : "afefaa53-c14b-4869-a7c1-5aaa34c4e472",
+        "participantId" : "cb-p1",
+        "fundId" : "cb-emergency",
+        "purpose" : "Rent",
+        "amountCents" : 30000,
+        "currency" : "USD",
+        "status" : "Paid",
+        "creatorId" : "cb-case-worker",
+        "clientSubmissionId" : "demo-rent-1",
+        "createdAt" : "2026-11-25T09:59:47.563188Z",
+        "decisionBy" : "cb-program-manager",
+        "decisionAt" : "2026-11-25T09:59:48.732046Z",
+        "paidBy" : "cb-finance",
+        "paidAt" : "2026-11-25T09:59:49.922565Z"
+      } ]
+    }
+  },
+  "tool" : "list_requests",
+  "arguments" : {
+    "status" : "Paid"
+  },
+  "identity" : "cb-finance"
+}, {
+  "result" : {
+    "ok" : true,
+    "data" : {
+      "funds" : [ {
+        "fundId" : "cb-emergency",
+        "name" : "Emergency Fund",
+        "currency" : "USD",
+        "allocationCents" : 1000000,
+        "committedCents" : 0,
+        "paidCents" : 30000,
+        "availableCents" : 970000
+      } ]
+    }
+  },
+  "tool" : "get_funding_summary",
+  "arguments" : {
+    "fundId" : "cb-emergency"
+  },
+  "identity" : "cb-finance"
+}, {
+  "identity" : "hs-program-manager",
+  "protocolVersion" : "2024-11-05"
+}, {
+  "identity" : "hs-program-manager",
+  "discoveredTools" : [ "approve_request", "create_request", "get_funding_summary", "get_request", "list_funds", "list_participants", "list_requests", "record_payment", "reject_request" ]
+}, {
+  "result" : {
+    "error" : {
+      "message" : "Record not found.",
+      "retryable" : false,
+      "code" : "NOT_FOUND"
+    },
+    "ok" : false
+  },
+  "tool" : "get_request",
+  "arguments" : {
+    "requestId" : "afefaa53-c14b-4869-a7c1-5aaa34c4e472"
+  },
+  "identity" : "hs-program-manager"
+}, {
+  "result" : {
+    "error" : {
+      "message" : "Record not found.",
+      "retryable" : false,
+      "code" : "NOT_FOUND"
+    },
+    "ok" : false
+  },
+  "tool" : "approve_request",
+  "arguments" : {
+    "requestId" : "afefaa53-c14b-4869-a7c1-5aaa34c4e472"
+  },
+  "identity" : "hs-program-manager"
+}, {
+  "result" : {
+    "ok" : true,
+    "data" : {
+      "requests" : [ ]
+    }
+  },
+  "tool" : "list_requests",
+  "arguments" : { },
+  "identity" : "hs-program-manager"
+} ]

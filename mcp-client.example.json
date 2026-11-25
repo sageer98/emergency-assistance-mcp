@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "emergency-assistance": {
+      "command": "/absolute/path/to/jdk-21/bin/java",
+      "args": ["-jar", "/absolute/path/to/emergency-assistance/target/emergency-assistance.jar"],
+      "env": {
+        "STAFF_ID": "cb-case-worker",
+        "APP_DB_PATH": "/absolute/path/to/emergency-assistance/data/assistance"
+      }
+    }
+  }
+}

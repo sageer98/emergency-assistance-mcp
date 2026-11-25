@@ -1,0 +1,58 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------< org.communitybridge:emergency-assistance >--------------
+[INFO] Building Emergency Assistance Funding 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.4.1:clean (default-clean) @ emergency-assistance ---
+[INFO] Deleting /Users/sageerhossain/Documents/Codex/2026-11-25/i-x20/outputs/emergency-assistance/target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ emergency-assistance ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 3 resources from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ emergency-assistance ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 8 source files with javac [debug parameters release 21] to target/classes
+[WARNING] /Users/sageerhossain/Documents/Codex/2026-11-25/i-x20/outputs/emergency-assistance/src/main/java/org/communitybridge/assistance/McpTools.java:[27,27] io.modelcontextprotocol.json.jackson.JacksonMcpJsonMapper in io.modelcontextprotocol.json.jackson has been deprecated and marked for removal
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ emergency-assistance ---
+[INFO] Copying 1 resource from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ emergency-assistance ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 5 source files with javac [debug parameters release 21] to target/test-classes
+[INFO] -------------------------------------------------------------
+[WARNING] COMPILATION WARNING : 
+[INFO] -------------------------------------------------------------
+[WARNING] /Users/sageerhossain/Documents/Codex/2026-11-25/i-x20/outputs/emergency-assistance/src/test/java/org/communitybridge/assistance/McpDemoClient.java:[32,59] io.modelcontextprotocol.json.jackson.JacksonMcpJsonMapper in io.modelcontextprotocol.json.jackson has been deprecated and marked for removal
+[INFO] 1 warning
+[INFO] -------------------------------------------------------------
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /Users/sageerhossain/Documents/Codex/2026-11-25/i-x20/outputs/emergency-assistance/src/test/java/org/communitybridge/assistance/McpDemoClient.java:[47,17] reference to assertThat is ambiguous
+  both method assertThat(java.util.function.IntPredicate) in org.assertj.core.api.Assertions and method <T>assertThat(java.util.function.Predicate<T>) in org.assertj.core.api.Assertions match
+[ERROR] /Users/sageerhossain/Documents/Codex/2026-11-25/i-x20/outputs/emergency-assistance/src/test/java/org/communitybridge/assistance/McpDemoClient.java:[48,17] reference to assertThat is ambiguous
+  both method assertThat(java.util.function.IntPredicate) in org.assertj.core.api.Assertions and method <T>assertThat(java.util.function.Predicate<T>) in org.assertj.core.api.Assertions match
+[INFO] 2 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.204 s
+[INFO] Finished at: 2026-11-25T15:24:24+05:30
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.14.1:testCompile (default-testCompile) on project emergency-assistance: Compilation failure: Compilation failure: 
+[ERROR] /Users/sageerhossain/Documents/Codex/2026-11-25/i-x20/outputs/emergency-assistance/src/test/java/org/communitybridge/assistance/McpDemoClient.java:[47,17] reference to assertThat is ambiguous
+[ERROR]   both method assertThat(java.util.function.IntPredicate) in org.assertj.core.api.Assertions and method <T>assertThat(java.util.function.Predicate<T>) in org.assertj.core.api.Assertions match
+[ERROR] /Users/sageerhossain/Documents/Codex/2026-11-25/i-x20/outputs/emergency-assistance/src/test/java/org/communitybridge/assistance/McpDemoClient.java:[48,17] reference to assertThat is ambiguous
+[ERROR]   both method assertThat(java.util.function.IntPredicate) in org.assertj.core.api.Assertions and method <T>assertThat(java.util.function.Predicate<T>) in org.assertj.core.api.Assertions match
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

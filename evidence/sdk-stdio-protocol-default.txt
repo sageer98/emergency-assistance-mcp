@@ -1,0 +1,7 @@
+  public java.util.List<java.lang.String> protocolVersions();
+    Code:
+         0: ldc           #66                 // String 2024-11-05
+         2: invokestatic  #68                 // InterfaceMethod java/util/List.of:(Ljava/lang/Object;)Ljava/util/List;
+         5: areturn
+
+  public void setSessionFactory(io.modelcontextprotocol.spec.McpServerSession$Factory);

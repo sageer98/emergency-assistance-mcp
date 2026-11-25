@@ -1,0 +1,136 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------< org.communitybridge:emergency-assistance >--------------
+[INFO] Building Emergency Assistance Funding 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.4.1:clean (default-clean) @ emergency-assistance ---
+[INFO] Deleting /Users/sageerhossain/Documents/Codex/2026-11-25/i-x20/outputs/emergency-assistance/target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ emergency-assistance ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 3 resources from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ emergency-assistance ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 8 source files with javac [debug parameters release 21] to target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ emergency-assistance ---
+[INFO] Copying 1 resource from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ emergency-assistance ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 5 source files with javac [debug parameters release 21] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.5.4:test (default-test) @ emergency-assistance ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.communitybridge.assistance.ContractTest
+[INFO] Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.838 s -- in org.communitybridge.assistance.ContractTest
+[INFO] Running org.communitybridge.assistance.BusinessTest
+[INFO] Tests run: 34, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.297 s -- in org.communitybridge.assistance.BusinessTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 53, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jar:3.4.2:jar (default-jar) @ emergency-assistance ---
+[INFO] Building jar: /Users/sageerhossain/Documents/Codex/2026-11-25/i-x20/outputs/emergency-assistance/target/emergency-assistance.jar
+[INFO] 
+[INFO] --- spring-boot:3.5.16:repackage (repackage) @ emergency-assistance ---
+[INFO] Replacing main artifact /Users/sageerhossain/Documents/Codex/2026-11-25/i-x20/outputs/emergency-assistance/target/emergency-assistance.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+[INFO] The original artifact has been renamed to /Users/sageerhossain/Documents/Codex/2026-11-25/i-x20/outputs/emergency-assistance/target/emergency-assistance.jar.original
+[INFO] 
+[INFO] --- failsafe:3.5.4:integration-test (default) @ emergency-assistance ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.communitybridge.assistance.McpEndToEndIT
+WARN  i.m.c.t.StdioClientTransport - Process terminated with code 1
+[ERROR] Tests run: 3, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 15.20 s <<< FAILURE! -- in org.communitybridge.assistance.McpEndToEndIT
+[ERROR] org.communitybridge.assistance.McpEndToEndIT.resetIsSeparateAndNormalProtocolStdoutContainsOnlyJson -- Time elapsed: 1.144 s <<< ERROR!
+java.lang.IllegalArgumentException: argument "content" is null
+	at com.fasterxml.jackson.databind.ObjectMapper._assertNotNull(ObjectMapper.java:5207)
+	at com.fasterxml.jackson.databind.ObjectMapper.readTree(ObjectMapper.java:3347)
+	at org.communitybridge.assistance.McpEndToEndIT.resetIsSeparateAndNormalProtocolStdoutContainsOnlyJson(McpEndToEndIT.java:78)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
+[ERROR] org.communitybridge.assistance.McpEndToEndIT.discoverCreateApprovePayAndSummarizeThroughActualMcp -- Time elapsed: 12.24 s <<< ERROR!
+java.lang.RuntimeException: Client failed to initialize by explicit API call
+	at io.modelcontextprotocol.client.LifecycleInitializer.lambda$withInitialization$2(LifecycleInitializer.java:288)
+	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:94)
+	at reactor.core.publisher.SerializedSubscriber.onError(SerializedSubscriber.java:124)
+	at reactor.core.publisher.FluxTimeout$TimeoutMainSubscriber.onError(FluxTimeout.java:220)
+	at reactor.core.publisher.FluxMap$MapSubscriber.onError(FluxMap.java:134)
+	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:106)
+	at reactor.core.publisher.Operators.error(Operators.java:198)
+	at reactor.core.publisher.MonoError.subscribe(MonoError.java:53)
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4576)
+	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:103)
+	at reactor.core.publisher.FluxPeekFuseable$PeekFuseableSubscriber.onError(FluxPeekFuseable.java:234)
+	at reactor.core.publisher.MonoFlatMap$FlatMapMain.onError(MonoFlatMap.java:180)
+	at reactor.core.publisher.MonoFlatMap$FlatMapMain.onError(MonoFlatMap.java:180)
+	at reactor.core.publisher.FluxHandle$HandleSubscriber.onError(FluxHandle.java:213)
+	at reactor.core.publisher.SerializedSubscriber.onError(SerializedSubscriber.java:124)
+	at reactor.core.publisher.FluxTimeout$TimeoutMainSubscriber.handleTimeout(FluxTimeout.java:296)
+	at reactor.core.publisher.FluxTimeout$TimeoutMainSubscriber.doTimeout(FluxTimeout.java:281)
+	at reactor.core.publisher.FluxTimeout$TimeoutTimeoutSubscriber.onNext(FluxTimeout.java:420)
+	at reactor.core.publisher.FluxOnErrorReturn$ReturnSubscriber.onNext(FluxOnErrorReturn.java:162)
+	at reactor.core.publisher.MonoDelay$MonoDelayRunnable.propagateDelay(MonoDelay.java:270)
+	at reactor.core.publisher.MonoDelay$MonoDelayRunnable.run(MonoDelay.java:285)
+	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:68)
+	at reactor.core.scheduler.SchedulerTask.call(SchedulerTask.java:28)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+	Suppressed: java.lang.Exception: #block terminated with an error
+		at reactor.core.publisher.BlockingSingleSubscriber.blockingGet(BlockingSingleSubscriber.java:104)
+		at reactor.core.publisher.Mono.block(Mono.java:1779)
+		at io.modelcontextprotocol.client.McpSyncClient.initialize(McpSyncClient.java:189)
+		at org.communitybridge.assistance.McpDemoClient.<init>(McpDemoClient.java:36)
+		at org.communitybridge.assistance.McpEndToEndIT.discoverCreateApprovePayAndSummarizeThroughActualMcp(McpEndToEndIT.java:19)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+		at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+		at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: java.util.concurrent.TimeoutException: Did not observe any item or terminal signal within 12000ms in 'source(MonoDeferContextual)' (and no fallback has been configured)
+	... 13 more
+
+[INFO] 
+[INFO] Results:
+[INFO] 
+[ERROR] Errors: 
+[ERROR]   McpEndToEndIT.discoverCreateApprovePayAndSummarizeThroughActualMcp » Runtime Client failed to initialize by explicit API call
+[ERROR]   McpEndToEndIT.resetIsSeparateAndNormalProtocolStdoutContainsOnlyJson:78 » IllegalArgument argument "content" is null
+[INFO] 
+[ERROR] Tests run: 3, Failures: 0, Errors: 2, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- failsafe:3.5.4:verify (default) @ emergency-assistance ---
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  26.822 s
+[INFO] Finished at: 2026-11-25T15:26:00+05:30
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-failsafe-plugin:3.5.4:verify (default) on project emergency-assistance: 
+[ERROR] 
+[ERROR] See /Users/sageerhossain/Documents/Codex/2026-11-25/i-x20/outputs/emergency-assistance/target/failsafe-reports for the individual test results.
+[ERROR] See dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

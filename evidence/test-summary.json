@@ -1,0 +1,40 @@
+{
+  "suites": [
+    {
+      "name": "org.communitybridge.assistance.DurabilityTest",
+      "tests": "1",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "1.026"
+    },
+    {
+      "name": "org.communitybridge.assistance.BusinessTest",
+      "tests": "34",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "8.724"
+    },
+    {
+      "name": "org.communitybridge.assistance.ContractTest",
+      "tests": "20",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "2.041"
+    },
+    {
+      "name": "org.communitybridge.assistance.McpEndToEndIT",
+      "tests": "3",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "11.141"
+    }
+  ],
+  "total": 58,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0
+}

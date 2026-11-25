@@ -1,0 +1,77 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------< org.communitybridge:emergency-assistance >--------------
+[INFO] Building Emergency Assistance Funding 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.4.1:clean (default-clean) @ emergency-assistance ---
+[INFO] Deleting /Users/sageerhossain/Documents/Codex/2026-11-25/i-x20/outputs/emergency-assistance/target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ emergency-assistance ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 3 resources from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ emergency-assistance ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 8 source files with javac [debug parameters release 21] to target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ emergency-assistance ---
+[INFO] Copying 1 resource from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ emergency-assistance ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 5 source files with javac [debug parameters release 21] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.5.4:test (default-test) @ emergency-assistance ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.communitybridge.assistance.ContractTest
+[INFO] Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.845 s -- in org.communitybridge.assistance.ContractTest
+[INFO] Running org.communitybridge.assistance.BusinessTest
+[INFO] Tests run: 34, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.271 s -- in org.communitybridge.assistance.BusinessTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 54, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jar:3.4.2:jar (default-jar) @ emergency-assistance ---
+[INFO] Building jar: /Users/sageerhossain/Documents/Codex/2026-11-25/i-x20/outputs/emergency-assistance/target/emergency-assistance.jar
+[INFO] 
+[INFO] --- spring-boot:3.5.16:repackage (repackage) @ emergency-assistance ---
+[INFO] Replacing main artifact /Users/sageerhossain/Documents/Codex/2026-11-25/i-x20/outputs/emergency-assistance/target/emergency-assistance.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+[INFO] The original artifact has been renamed to /Users/sageerhossain/Documents/Codex/2026-11-25/i-x20/outputs/emergency-assistance/target/emergency-assistance.jar.original
+[INFO] 
+[INFO] --- failsafe:3.5.4:integration-test (default) @ emergency-assistance ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.communitybridge.assistance.McpEndToEndIT
+ERROR i.m.s.McpClientSession - Error handling request: JSONRPCError[code=-32602, message=Unknown tool: invalid_tool_name, data=Tool not found: unknown_tool]
+WARN  i.m.c.t.StdioClientTransport - Process terminated with code 143
+WARN  i.m.c.t.StdioClientTransport - Process terminated with code 143
+WARN  i.m.c.t.StdioClientTransport - Process terminated with code 143
+WARN  i.m.c.t.StdioClientTransport - Process terminated with code 143
+MCP DEMO PASSED: discovered 9 tools; Pending -> Approved -> Paid; available=$9,700, paid=$300, committed=$0. Transcript: target/mcp-demo-transcript.json
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.39 s -- in org.communitybridge.assistance.McpEndToEndIT
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- failsafe:3.5.4:verify (default) @ emergency-assistance ---
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  19.597 s
+[INFO] Finished at: 2026-11-25T15:32:33+05:30
+[INFO] ------------------------------------------------------------------------
+
+Demo transcript: target/mcp-demo-transcript.json
